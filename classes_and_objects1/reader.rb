@@ -20,6 +20,7 @@ end
 
 kitty = Cat.new("Doe")
 kitty.greet
+puts kitty.name
 
 # This problem could have been solved two ways:
 # 1. The getter method can be written out as has been done in this example.
@@ -27,3 +28,4 @@ kitty.greet
 # the `name` method on lines 12 - 14.
 # Both approaches do the same thing and provide the same accessability but
 # approach #2 is much more concise.
+# The getter method also now allows us access to the `@name` instance variable.
