@@ -10,6 +10,8 @@ class Cat
 end
 
 Cat.generic_greeting
+kitty = Cat.new
+kitty.class.generic_greeting
 
 # There are a couple of subtleties to pay attention to for this exercise
 # 1. We are being asked to "do something" when `generic_greeting` is called
@@ -20,3 +22,10 @@ Cat.generic_greeting
 #    class. We can do this by using `self` prepended to the method name or
 #    we could prepend the class name: `Cat.generic_greeting`. The former
 #    is the preferred syntax.
+#
+# Further Exploration:
+# When we execute line 14, what I believe is happening is that we have 
+# method chaining taking place. First, the class method is called on the
+# object kitty which is of class Cat, the value Cat is returned. The class
+# method is then called on Cat. generic_greeting is a defined class method
+# for the Cat class so it is executed and the string is output.
