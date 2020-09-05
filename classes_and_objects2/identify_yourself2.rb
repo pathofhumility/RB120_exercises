@@ -1,6 +1,6 @@
 # identify_yourself2.rb
 #
-# Update the following code so that it prints `i'm Doe!` when it incokes `puts kitty`.
+# Update the following code so that it prints `i'm Doe!` when it invokes `puts kitty`.
 
 class Cat
   attr_reader  :name
