@@ -1,0 +1,30 @@
+# protected_secret.rb
+#
+# Using the following code, add an instance method named `compare_secret` that
+# compares the value of `@secret` from `person1` with the value of `@secret`
+# from `person2`.
+
+class Person
+  attr_writer :secret
+
+  def compare_secret(other)
+    secret == other.secret
+  end
+
+  protected
+
+  attr_reader :secret
+end
+
+person1 = Person.new
+person1.secret = 'Shh.. this is a secret!'
+
+person2 = Person.new
+person2.secret = 'Shh.. this is a different secret!'
+
+puts person1.compare_secret(person2)
+
+# Protected methods are very similar to private methods.
+# The primary difference is that a private method will only allow access to an instance method
+# from a call within the class.
+# A protected method will allow for a call from within the class to another instance of the class.
