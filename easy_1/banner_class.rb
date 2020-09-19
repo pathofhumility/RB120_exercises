@@ -3,6 +3,11 @@
 # Complete this class so that the test cases work as intended. You are free to add any methhods
 # or instance variables you need, however, do not make the implementation details public.
 
+# Further exploration: Modify the class so `new` will optionally let you specify a ficed banner
+# width at the time the Banner object is created. The message in the banner should be centered
+# within the banner of that width. Decide for yourself how you want to handle widths that are
+# either too narrow or too wide.
+
 class Banner
   def initialize(message, banner_width=0)
     @message = message
