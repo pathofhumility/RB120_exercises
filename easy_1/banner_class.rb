@@ -4,10 +4,9 @@
 # or instance variables you need, however, do not make the implementation details public.
 
 class Banner
-  attr_reader :message, :empty_space, :empty_dash
-
-  def initialize(message)
+  def initialize(message, banner_width=0)
     @message = message
+    @banner_width = banner_width
     @empty_space = fill_space(' ')
     @empty_dash = fill_space('-')
   end
@@ -19,23 +18,36 @@ class Banner
   private
 
   def fill_space(char)
-    char * message.length
+    if @banner_width <= @message.length
+      char * @message.length
+    else
+      char * @banner_width
+    end
   end
 
   def horizontal_rule
-   "+-#{empty_dash}-+" 
+   "+-#{@empty_dash}-+" 
   end
 
   def empty_line
-   "| #{empty_space} |" 
+   "| #{@empty_space} |" 
   end
 
   def message_line
-    "| #{message} |"
+    if @banner_width <= @message.length
+      "| #{@message} |"
+    else
+      pre_space = ' ' * ((@banner_width - @message.length) / 2) 
+      post_space = ' ' * (@banner_width - @message.length - pre_space.length)
+      "| #{pre_space}#{@message}#{post_space} |"
+    end
   end
 end
 
-banner = Banner.new('To boldly got where no one has gone before.')
+banner = Banner.new('To boldly go where no one has gone before.')
+puts banner
+
+banner = Banner.new('To boldly go where no one has gone before.', 150)
 puts banner
 
 banner = Banner.new('')
