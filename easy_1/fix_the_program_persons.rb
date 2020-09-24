@@ -10,6 +10,7 @@ class Person
     @last_name = last_name.capitalize
   end
 
+  # added the following setter methods
   def first_name=(first_name)
     @first_name = first_name.capitalize
   end
