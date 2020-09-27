@@ -1,5 +1,6 @@
 # mailable.rb
 # Correct the given code so that it will work properly.
+# Solution: add mixins to Customer and Employee classes.
 
 module Mailable
   def print_address
@@ -17,7 +18,7 @@ end
 
 class Employee
   include Mailable
-  
+
   attr_reader :name, :address, :city, :state, :zipcode
 end
 
