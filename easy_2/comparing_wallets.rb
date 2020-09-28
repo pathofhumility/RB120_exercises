@@ -20,6 +20,16 @@ class Wallet
   attr_reader :amount
 end
 
+class Hacker
+  def self.check_amt(some_wallet)
+    some_wallet.amount
+  end
+
+  def check_amt(some_wallet)
+    some_wallet.amount
+  end
+end
+
 bills_wallet = Wallet.new(500)
 pennys_wallet = Wallet.new(465)
 if bills_wallet > pennys_wallet
@@ -29,3 +39,7 @@ elsif bills_wallet < pennys_wallet
 else
   puts 'Bill and Penny have the same amount of money.'
 end
+
+p Hacker.check_amt(pennys_wallet) # will throw an error
+hacker = Hacker.new
+p hacker.check_amt(bills_wallet)  # will throw an error
