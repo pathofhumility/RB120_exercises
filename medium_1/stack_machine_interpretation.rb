@@ -1,4 +1,8 @@
 # stack_machine_interpretation.rb
+# Write a class that implements a miniature stack-and-register-based programming
+# language that has the following commands:
+# n - Place a value n in the "register". Do not modify the stack.
+#
 
 class Minilang
 end
