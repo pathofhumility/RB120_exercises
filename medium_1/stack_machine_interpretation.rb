@@ -2,6 +2,8 @@
 # Write a class that implements a miniature stack-and-register-based programming
 # language that has the following commands:
 # n - Place a value n in the "register". Do not modify the stack.
+# PUSH - push the register value on to the stack. Leave the value in the register.
+# ADD - Pops a value from the stack and adds it to the register value, storing the result in the register.
 #
 
 class Minilang
